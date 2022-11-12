@@ -30,6 +30,8 @@ purposes.
 
 [1] https://www.smartfarm.ag/about-us/the-problem-to-be-solved/
 
+![Blcok diagram](img/block-diagram.png)
+
 # Parts List
 
 The following list covers the major parts I used in the build. I've linked to
