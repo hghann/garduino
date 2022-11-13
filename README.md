@@ -62,6 +62,9 @@ the actual parts I used, when applicable.
 # Reference
 
 [1] https://www.smartfarm.ag/about-us/the-problem-to-be-solved/
+
 [2] https://lastminuteengineers.com/water-level-sensor-arduino-tutorial/
+
 [3] https://lastminuteengineers.com/dht11-dht22-arduino-tutorial/
+
 [4] https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib
