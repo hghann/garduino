@@ -28,8 +28,6 @@ Benefits of this Smart Irrigation System:
 This prototype can be modified to be implemented on a large scale for farming
 purposes.
 
-[1] https://www.smartfarm.ag/about-us/the-problem-to-be-solved/
-
 ![Blcok diagram](img/block-diagram.png)
 
 # Parts List
@@ -50,3 +48,20 @@ the actual parts I used, when applicable.
 |   10  | 3D Printed Water Tank                        |   $0.00 |
 |   11  | 3D Printed Casing                            |   $0.00 |
 | TOTAL |                                              | $117.41 |
+
+# Wiring Diagram
+
+## Water Level Sensor
+
+![Water level sensor](img/water-level.png)
+
+## Temperature and Humidity Sensor
+
+![DHT22 sensor](img/DHT22.png)
+
+# Reference
+
+[1] https://www.smartfarm.ag/about-us/the-problem-to-be-solved/
+[2] https://lastminuteengineers.com/water-level-sensor-arduino-tutorial/
+[3] https://lastminuteengineers.com/dht11-dht22-arduino-tutorial/
+[4] https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib
