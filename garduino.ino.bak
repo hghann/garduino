@@ -1,7 +1,3 @@
-#include <dht.h>
-#define dataPin 8 // Defines pin number to which the sensor is connected
-dht DHT; // Create a DHT object
-
 /* Change these values based on your calibration values */
 int lowerThreshold = 400;
 int upperThreshold = 520;
@@ -47,7 +43,6 @@ void setup() {
 
 void loop() {
   int led = turnLED();
-  int temphumid = printTempHumid();
   int pump = powerPump();
   Serial.println();
   delay(1000);
@@ -68,23 +63,10 @@ int powerPump() {
   Serial.print("Moisture level:");
   Serial.println(moistVal);
 
-// Uncomment whatever type you're using
-  int readData = DHT.read22(dataPin); // DHT22/AM2302
-  //int readData = DHT.read11(dataPin); // DHT11
-
-  float t = DHT.temperature; // Gets the values of the temperature
-  float h = DHT.humidity; // Gets the values of the humidity
-
   if(level >= lowerThreshold) {
-    if(moistVal >= 410) {
+    if(moistVal > 410) {
       digitalWrite(IN1, LOW);
-    }  elseif (t >= 40 ) {
-      digitalWrite(IN1, LOW);
-      delay(50000)
-      digitalWrite(IN1, HIGH);
-    } elseif (h <= 20) {
-      digitalWrite(IN1, LOW);
-      delay(50000)
+    } else {
       digitalWrite(IN1, HIGH);
     }
   } else {
@@ -119,25 +101,4 @@ int turnLED(){
     digitalWrite(yellowLED, LOW);
     digitalWrite(greenLED, HIGH);
   }
-}
-
-int printTempHumid(){
-int readData = DHT.read22(dataPin); // DHT22/AM2302
-float t = DHT.temperature; // Gets the values of the temperature
-float h = DHT.humidity; // Gets the values of the humidity
-
-// Printing the results on the serial monitor
-  Serial.print("Temperature = ");
-  Serial.print(t);
-  Serial.print(" ");
-  Serial.print("C | ");
-  Serial.print((t * 9.0) / 5.0 + 32.0);//print the temperature in Fahrenheit
-  Serial.print(" ");
-  Serial.println("F ");
-  Serial.print("Humidity = ");
-  Serial.print(h);
-  Serial.println(" % ");
-  Serial.println("");
-
-  delay(2000); // Delays 2 seconds
 }
